@@ -12,7 +12,7 @@
   <div class="background"></div>
 
   <!-- Audio Element for Background Music -->
-  <audio id="background-music" loop>
+  <audio id="background-music" autoplay loop>
     <source src="background-music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -54,13 +54,11 @@
       }, 100); // Speed adjustment: Slow progress animation
     }
 
-    // Play background music on single click
-    document.body.addEventListener('click', () => {
-      backgroundMusic.play();
-    });
-
     // Start the bar animation when the page loads
-    window.onload = animateProgressBar;
+    window.onload = () => {
+      animateProgressBar();
+      backgroundMusic.play();
+    };
   </script>
 </body>
 </html>
