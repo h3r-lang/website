@@ -12,7 +12,7 @@
   <div class="background"></div>
 
   <!-- Audio Element for Background Music -->
-  <audio id="background-music" autoplay loop>
+  <audio id="background-music" loop>
     <source src="background-music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -41,7 +41,8 @@
     // Minecraft-style progress bar animation
     const progressBar = document.getElementById('progress-bar');
     const backgroundMusic = document.getElementById('background-music');
-    
+    let isMusicPlaying = false;
+
     function animateProgressBar() {
       let progress = 0;
       const interval = setInterval(() => {
@@ -54,11 +55,19 @@
       }, 100); // Speed adjustment: Slow progress animation
     }
 
+    function playBackgroundMusic() {
+      if (!isMusicPlaying) {
+        backgroundMusic.play();
+        isMusicPlaying = true;
+      }
+    }
+
+    // Play background music on single click or scroll
+    document.body.addEventListener('click', playBackgroundMusic);
+    window.addEventListener('scroll', playBackgroundMusic);
+
     // Start the bar animation when the page loads
-    window.onload = () => {
-      animateProgressBar();
-      backgroundMusic.play();
-    };
+    window.onload = animateProgressBar;
   </script>
 </body>
 </html>
