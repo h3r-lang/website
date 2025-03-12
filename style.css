@@ -1,0 +1,118 @@
+/* General Reset */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Minecraft', sans-serif; /* Replace with Minecraft font if available */
+  color: white;
+  background: rgb(0, 0, 0); /* Black fallback if the image fails to load */
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blurred Background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.postimg.cc/C5t2yfNY/download-6.gif') no-repeat center center/cover; /* Replace with your own image */
+  filter: blur(10px);
+  z-index: -1; /* Sits behind all the content */
+}
+
+/* Content Section (Coming Soon) */
+.coming-soon {
+  text-align: center; /* Center the text horizontally */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack text and progress bar vertically */
+  z-index: 1; /* Lies above the blurred background */
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.116); /* Semi-transparent dark background for content */
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff6600; /* Minecraft-green text */
+}
+
+/* Blink Animation for Under Construction Text */
+.blink {
+  animation: blink 1s infinite;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #e0d6d6;
+}
+
+/* Progress Bar Container */
+.progress-container {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  height: 40px;
+  background: #555; /* Dark gray background */
+  border: 3px solid #222;
+  border-radius: 10px; /* Optional rounded borders */
+  margin: 20px auto;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Minecraft-Style Progress Bar */
+.minecraft-bar {
+  width: 0%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff9900,
+    #e9a615 5px,
+    #007700 5px,
+    #007700 10px
+  ); /* Minecraft-style pixel pattern */
+  border: 1px solid black; /* Pixelated look */
+  border-radius: 2px;
+  transition: width 0.15s linear; /* Smoothly animate width */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animated-text {
+  animation: blink 1s infinite;
+}
+
+/* Footer Section */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.footer p {
+  margin: 10px 0;
+}

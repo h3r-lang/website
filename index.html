@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Valley Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Section -->
+  <div class="background"></div>
+
+<!-- Created by [@Rasty] -->
+
+  <!-- Main Content Section -->
+  <div class="coming-soon">
+    <div class="content">
+      <h1 class="blink">Under Construction</h1>
+      <p>Something amazing is on its way!</p>
+      
+      <!-- Minecraft-Style Progress Bar -->
+      <div class="progress-container">
+        <div class="minecraft-bar" id="progress-bar"></div>
+      </div>
+    </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; <span id="year"></span> Hidden Valley Network </p>
+  </div>
+
+  <!-- JavaScript for Progress Bar Animation -->
+  <script>
+    // Automatically updates the year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Minecraft-style progress bar animation
+    const progressBar = document.getElementById('progress-bar');
+    
+    function animateProgressBar() {
+      let progress = 0;
+      const interval = setInterval(() => {
+        if (progress < 80) {
+          progress++;
+          progressBar.style.width = `${progress}%`;
+        } else {
+          progress = 0; // Reset the progress back to 0%
+        }
+      }, 100); // Speed adjustment: Slow progress animation
+    }
+
+    // Start the bar animation when the page loads
+    window.onload = animateProgressBar;
+  </script>
+</body>
+</html>
